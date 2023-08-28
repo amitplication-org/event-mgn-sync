@@ -9,4 +9,5 @@ export type EventUpdateInput = {
   location?: string;
   attendees?: AttendeeUpdateManyWithoutEventsInput;
   sessions?: SessionUpdateManyWithoutEventsInput;
+  eventType?: "Tech" | "Design" | null;
 };
