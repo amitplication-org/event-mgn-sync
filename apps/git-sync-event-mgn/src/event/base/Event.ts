@@ -11,10 +11,17 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsDate, ValidateNested, IsOptional } from "class-validator";
+import {
+  IsString,
+  IsDate,
+  ValidateNested,
+  IsOptional,
+  IsEnum,
+} from "class-validator";
 import { Type } from "class-transformer";
 import { Attendee } from "../../attendee/base/Attendee";
 import { Session } from "../../session/base/Session";
+import { EnumEventEventType } from "./EnumEventEventType";
 
 @ObjectType()
 class Event {
@@ -83,6 +90,17 @@ class Event {
   @Type(() => Session)
   @IsOptional()
   sessions?: Array<Session>;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumEventEventType,
+  })
+  @IsEnum(EnumEventEventType)
+  @IsOptional()
+  @Field(() => EnumEventEventType, {
+    nullable: true,
+  })
+  eventType?: "Tech" | "Design" | null;
 }
 
 export { Event as Event };

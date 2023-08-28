@@ -13,10 +13,11 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
-import { IsOptional, ValidateNested } from "class-validator";
+import { IsOptional, ValidateNested, IsEnum } from "class-validator";
 import { DateTimeFilter } from "../../util/DateTimeFilter";
 import { AttendeeListRelationFilter } from "../../attendee/base/AttendeeListRelationFilter";
 import { SessionListRelationFilter } from "../../session/base/SessionListRelationFilter";
+import { EnumEventEventType } from "./EnumEventEventType";
 
 @InputType()
 class EventWhereInput {
@@ -109,6 +110,17 @@ class EventWhereInput {
     nullable: true,
   })
   sessions?: SessionListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumEventEventType,
+  })
+  @IsEnum(EnumEventEventType)
+  @IsOptional()
+  @Field(() => EnumEventEventType, {
+    nullable: true,
+  })
+  eventType?: "Tech" | "Design";
 }
 
 export { EventWhereInput as EventWhereInput };

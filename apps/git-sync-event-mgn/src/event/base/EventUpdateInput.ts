@@ -11,10 +11,17 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional, IsDate, ValidateNested } from "class-validator";
+import {
+  IsString,
+  IsOptional,
+  IsDate,
+  ValidateNested,
+  IsEnum,
+} from "class-validator";
 import { Type } from "class-transformer";
 import { AttendeeUpdateManyWithoutEventsInput } from "./AttendeeUpdateManyWithoutEventsInput";
 import { SessionUpdateManyWithoutEventsInput } from "./SessionUpdateManyWithoutEventsInput";
+import { EnumEventEventType } from "./EnumEventEventType";
 
 @InputType()
 class EventUpdateInput {
@@ -96,6 +103,17 @@ class EventUpdateInput {
     nullable: true,
   })
   sessions?: SessionUpdateManyWithoutEventsInput;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumEventEventType,
+  })
+  @IsEnum(EnumEventEventType)
+  @IsOptional()
+  @Field(() => EnumEventEventType, {
+    nullable: true,
+  })
+  eventType?: "Tech" | "Design" | null;
 }
 
 export { EventUpdateInput as EventUpdateInput };

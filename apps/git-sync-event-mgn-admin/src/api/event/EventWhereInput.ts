@@ -12,4 +12,5 @@ export type EventWhereInput = {
   location?: StringFilter;
   attendees?: AttendeeListRelationFilter;
   sessions?: SessionListRelationFilter;
+  eventType?: "Tech" | "Design";
 };
