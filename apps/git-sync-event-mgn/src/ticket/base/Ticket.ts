@@ -11,7 +11,7 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsEnum, ValidateNested } from "class-validator";
+import { IsString, IsEnum, ValidateNested, IsOptional } from "class-validator";
 import { EnumTicketTicketType } from "./EnumTicketTicketType";
 import { Attendee } from "../../attendee/base/Attendee";
 import { Type } from "class-transformer";
@@ -43,6 +43,17 @@ class Ticket {
   @ValidateNested()
   @Type(() => Attendee)
   attendee?: Attendee;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  title!: string | null;
 }
 
 export { Ticket as Ticket };

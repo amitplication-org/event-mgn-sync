@@ -31,6 +31,7 @@ export const AttendeeCreate = (props: CreateProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={TicketTitle} />
         </ReferenceArrayInput>
+        <TextInput label="last name" source="lastName" />
       </SimpleForm>
     </Create>
   );

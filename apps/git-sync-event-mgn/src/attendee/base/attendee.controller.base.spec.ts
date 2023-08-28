@@ -22,23 +22,27 @@ const CREATE_INPUT = {
   id: "exampleId",
   name: "exampleName",
   email: "exampleEmail",
+  lastName: "exampleLastName",
 };
 const CREATE_RESULT = {
   id: "exampleId",
   name: "exampleName",
   email: "exampleEmail",
+  lastName: "exampleLastName",
 };
 const FIND_MANY_RESULT = [
   {
     id: "exampleId",
     name: "exampleName",
     email: "exampleEmail",
+    lastName: "exampleLastName",
   },
 ];
 const FIND_ONE_RESULT = {
   id: "exampleId",
   name: "exampleName",
   email: "exampleEmail",
+  lastName: "exampleLastName",
 };
 
 const service = {

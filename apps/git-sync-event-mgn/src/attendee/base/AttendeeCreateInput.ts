@@ -54,6 +54,17 @@ class AttendeeCreateInput {
     nullable: true,
   })
   tikets?: TicketCreateNestedManyWithoutAttendeesInput;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  lastName?: string | null;
 }
 
 export { AttendeeCreateInput as AttendeeCreateInput };

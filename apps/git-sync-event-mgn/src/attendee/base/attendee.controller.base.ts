@@ -68,6 +68,8 @@ export class AttendeeControllerBase {
             id: true,
           },
         },
+
+        lastName: true,
       },
     });
   }
@@ -98,6 +100,8 @@ export class AttendeeControllerBase {
             id: true,
           },
         },
+
+        lastName: true,
       },
     });
   }
@@ -129,6 +133,8 @@ export class AttendeeControllerBase {
             id: true,
           },
         },
+
+        lastName: true,
       },
     });
     if (result === null) {
@@ -175,6 +181,8 @@ export class AttendeeControllerBase {
               id: true,
             },
           },
+
+          lastName: true,
         },
       });
     } catch (error) {
@@ -214,6 +222,8 @@ export class AttendeeControllerBase {
               id: true,
             },
           },
+
+          lastName: true,
         },
       });
     } catch (error) {
@@ -250,6 +260,8 @@ export class AttendeeControllerBase {
             id: true,
           },
         },
+
+        title: true,
       },
     });
     if (results === null) {

@@ -20,17 +20,21 @@ const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
   id: "exampleId",
+  title: "exampleTitle",
 };
 const CREATE_RESULT = {
   id: "exampleId",
+  title: "exampleTitle",
 };
 const FIND_MANY_RESULT = [
   {
     id: "exampleId",
+    title: "exampleTitle",
   },
 ];
 const FIND_ONE_RESULT = {
   id: "exampleId",
+  title: "exampleTitle",
 };
 
 const service = {

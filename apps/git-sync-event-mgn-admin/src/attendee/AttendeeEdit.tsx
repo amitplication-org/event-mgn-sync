@@ -31,6 +31,7 @@ export const AttendeeEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={TicketTitle} />
         </ReferenceArrayInput>
+        <TextInput label="last name" source="lastName" />
       </SimpleForm>
     </Edit>
   );
