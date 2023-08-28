@@ -8,6 +8,7 @@ import {
   DateTimeInput,
   ReferenceArrayInput,
   SelectArrayInput,
+  SelectInput,
 } from "react-admin";
 
 import { AttendeeTitle } from "../attendee/AttendeeTitle";
@@ -38,6 +39,17 @@ export const EventEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={SessionTitle} />
         </ReferenceArrayInput>
+        <SelectInput
+          source="eventType"
+          label="event type"
+          choices={[
+            { label: "Tech", value: "Tech" },
+            { label: "Design", value: "Design" },
+          ]}
+          optionText="label"
+          allowEmpty
+          optionValue="value"
+        />
       </SimpleForm>
     </Edit>
   );

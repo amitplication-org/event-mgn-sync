@@ -9,4 +9,5 @@ export type EventCreateInput = {
   location: string;
   attendees?: AttendeeCreateNestedManyWithoutEventsInput;
   sessions?: SessionCreateNestedManyWithoutEventsInput;
+  eventType?: "Tech" | "Design" | null;
 };

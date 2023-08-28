@@ -10,4 +10,5 @@ export type Event = {
   location: string;
   attendees?: Array<Attendee>;
   sessions?: Array<Session>;
+  eventType?: "Tech" | "Design" | null;
 };

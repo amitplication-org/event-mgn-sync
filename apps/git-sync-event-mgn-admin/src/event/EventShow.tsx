@@ -22,6 +22,7 @@ export const EventShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Start Date" source="startDate" />
         <TextField label="End Date" source="endDate" />
         <TextField label="Location" source="location" />
+        <TextField label="event type" source="eventType" />
         <ReferenceManyField
           reference="Attendee"
           target="eventId"
