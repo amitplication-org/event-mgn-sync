@@ -7,4 +7,5 @@ export type Attendee = {
   email: string;
   event?: Event;
   tikets?: Array<Ticket>;
+  lastName: string | null;
 };

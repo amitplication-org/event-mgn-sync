@@ -6,4 +6,5 @@ export type AttendeeUpdateInput = {
   email?: string;
   event?: EventWhereUniqueInput;
   tikets?: TicketUpdateManyWithoutAttendeesInput;
+  lastName?: string | null;
 };

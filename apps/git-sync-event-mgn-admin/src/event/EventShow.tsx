@@ -35,6 +35,7 @@ export const EventShow = (props: ShowProps): React.ReactElement => {
             <ReferenceField label="Event" source="event.id" reference="Event">
               <TextField source={EVENT_TITLE_FIELD} />
             </ReferenceField>
+            <TextField label="last name" source="lastName" />
           </Datagrid>
         </ReferenceManyField>
         <ReferenceManyField

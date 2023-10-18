@@ -58,6 +58,17 @@ class Attendee {
   @Type(() => Ticket)
   @IsOptional()
   tikets?: Array<Ticket>;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  lastName!: string | null;
 }
 
 export { Attendee as Attendee };

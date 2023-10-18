@@ -6,4 +6,5 @@ export type AttendeeCreateInput = {
   email: string;
   event: EventWhereUniqueInput;
   tikets?: TicketCreateNestedManyWithoutAttendeesInput;
+  lastName?: string | null;
 };

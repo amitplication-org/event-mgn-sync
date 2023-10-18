@@ -16,6 +16,7 @@ import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { EventWhereUniqueInput } from "../../event/base/EventWhereUniqueInput";
 import { TicketListRelationFilter } from "../../ticket/base/TicketListRelationFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class AttendeeWhereInput {
@@ -75,6 +76,17 @@ class AttendeeWhereInput {
     nullable: true,
   })
   tikets?: TicketListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  lastName?: StringNullableFilter;
 }
 
 export { AttendeeWhereInput as AttendeeWhereInput };

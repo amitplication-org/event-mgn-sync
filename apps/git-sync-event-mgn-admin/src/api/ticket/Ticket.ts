@@ -4,4 +4,5 @@ export type Ticket = {
   id: string;
   ticketType?: "FREE" | "PAID";
   attendee?: Attendee;
+  title: string | null;
 };

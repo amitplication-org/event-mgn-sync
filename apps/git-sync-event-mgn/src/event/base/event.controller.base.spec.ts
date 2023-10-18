@@ -176,7 +176,7 @@ describe("Event", () => {
   });
 
   test("POST /events existing resource", async () => {
-    let agent = request(app.getHttpServer());
+    const agent = request(app.getHttpServer());
     await agent
       .post("/events")
       .send(CREATE_INPUT)

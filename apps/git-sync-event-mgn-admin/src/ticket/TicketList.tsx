@@ -28,6 +28,7 @@ export const TicketList = (props: ListProps): React.ReactElement => {
         >
           <TextField source={ATTENDEE_TITLE_FIELD} />
         </ReferenceField>
+        <TextField label="title" source="title" />
       </Datagrid>
     </List>
   );

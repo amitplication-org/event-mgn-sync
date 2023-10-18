@@ -20,17 +20,21 @@ const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
   id: "exampleId",
+  title: "exampleTitle",
 };
 const CREATE_RESULT = {
   id: "exampleId",
+  title: "exampleTitle",
 };
 const FIND_MANY_RESULT = [
   {
     id: "exampleId",
+    title: "exampleTitle",
   },
 ];
 const FIND_ONE_RESULT = {
   id: "exampleId",
+  title: "exampleTitle",
 };
 
 const service = {
@@ -142,7 +146,7 @@ describe("Ticket", () => {
   });
 
   test("POST /tickets existing resource", async () => {
-    let agent = request(app.getHttpServer());
+    const agent = request(app.getHttpServer());
     await agent
       .post("/tickets")
       .send(CREATE_INPUT)
