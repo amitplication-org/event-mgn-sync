@@ -5,6 +5,7 @@ import {
   EditProps,
   SelectInput,
   ReferenceInput,
+  TextInput,
 } from "react-admin";
 import { AttendeeTitle } from "../attendee/AttendeeTitle";
 
@@ -29,6 +30,7 @@ export const TicketEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectInput optionText={AttendeeTitle} />
         </ReferenceInput>
+        <TextInput label="title" source="title" />
       </SimpleForm>
     </Edit>
   );

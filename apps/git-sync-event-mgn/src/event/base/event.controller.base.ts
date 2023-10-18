@@ -232,6 +232,8 @@ export class EventControllerBase {
             id: true,
           },
         },
+
+        lastName: true,
       },
     });
     if (results === null) {

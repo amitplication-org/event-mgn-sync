@@ -5,4 +5,5 @@ export type AttendeeOrderByInput = {
   name?: SortOrder;
   email?: SortOrder;
   eventId?: SortOrder;
+  lastName?: SortOrder;
 };

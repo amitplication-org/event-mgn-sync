@@ -23,6 +23,7 @@ export const AttendeeShow = (props: ShowProps): React.ReactElement => {
         <ReferenceField label="Event" source="event.id" reference="Event">
           <TextField source={EVENT_TITLE_FIELD} />
         </ReferenceField>
+        <TextField label="last name" source="lastName" />
         <ReferenceManyField
           reference="Ticket"
           target="attendeeId"
@@ -38,6 +39,7 @@ export const AttendeeShow = (props: ShowProps): React.ReactElement => {
             >
               <TextField source={ATTENDEE_TITLE_FIELD} />
             </ReferenceField>
+            <TextField label="title" source="title" />
           </Datagrid>
         </ReferenceManyField>
       </SimpleShowLayout>

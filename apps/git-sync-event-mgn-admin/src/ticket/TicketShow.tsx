@@ -21,6 +21,7 @@ export const TicketShow = (props: ShowProps): React.ReactElement => {
         >
           <TextField source={ATTENDEE_TITLE_FIELD} />
         </ReferenceField>
+        <TextField label="title" source="title" />
       </SimpleShowLayout>
     </Show>
   );

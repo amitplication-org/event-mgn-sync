@@ -64,6 +64,8 @@ export class TicketControllerBase {
             id: true,
           },
         },
+
+        title: true,
       },
     });
   }
@@ -93,6 +95,8 @@ export class TicketControllerBase {
             id: true,
           },
         },
+
+        title: true,
       },
     });
   }
@@ -123,6 +127,8 @@ export class TicketControllerBase {
             id: true,
           },
         },
+
+        title: true,
       },
     });
     if (result === null) {
@@ -168,6 +174,8 @@ export class TicketControllerBase {
               id: true,
             },
           },
+
+          title: true,
         },
       });
     } catch (error) {
@@ -206,6 +214,8 @@ export class TicketControllerBase {
               id: true,
             },
           },
+
+          title: true,
         },
       });
     } catch (error) {

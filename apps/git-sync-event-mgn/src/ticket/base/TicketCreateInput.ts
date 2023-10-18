@@ -12,7 +12,7 @@ https://docs.amplication.com/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { EnumTicketTicketType } from "./EnumTicketTicketType";
-import { IsEnum, ValidateNested } from "class-validator";
+import { IsEnum, ValidateNested, IsString, IsOptional } from "class-validator";
 import { AttendeeWhereUniqueInput } from "../../attendee/base/AttendeeWhereUniqueInput";
 import { Type } from "class-transformer";
 
@@ -34,6 +34,17 @@ class TicketCreateInput {
   @Type(() => AttendeeWhereUniqueInput)
   @Field(() => AttendeeWhereUniqueInput)
   attendee!: AttendeeWhereUniqueInput;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  title?: string | null;
 }
 
 export { TicketCreateInput as TicketCreateInput };

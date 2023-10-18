@@ -4,4 +4,5 @@ export type TicketOrderByInput = {
   id?: SortOrder;
   ticketType?: SortOrder;
   attendeeId?: SortOrder;
+  title?: SortOrder;
 };

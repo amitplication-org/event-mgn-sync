@@ -16,6 +16,7 @@ import { Type } from "class-transformer";
 import { IsOptional, IsEnum, ValidateNested } from "class-validator";
 import { EnumTicketTicketType } from "./EnumTicketTicketType";
 import { AttendeeWhereUniqueInput } from "../../attendee/base/AttendeeWhereUniqueInput";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class TicketWhereInput {
@@ -52,6 +53,17 @@ class TicketWhereInput {
     nullable: true,
   })
   attendee?: AttendeeWhereUniqueInput;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  title?: StringNullableFilter;
 }
 
 export { TicketWhereInput as TicketWhereInput };

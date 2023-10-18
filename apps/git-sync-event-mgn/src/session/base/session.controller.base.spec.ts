@@ -165,7 +165,7 @@ describe("Session", () => {
   });
 
   test("POST /sessions existing resource", async () => {
-    let agent = request(app.getHttpServer());
+    const agent = request(app.getHttpServer());
     await agent
       .post("/sessions")
       .send(CREATE_INPUT)
